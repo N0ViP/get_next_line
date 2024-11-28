@@ -21,6 +21,11 @@
 #  define BUFFER_SIZE 10
 # endif
 
+# if defined BUFFER_SIZE && BUFFER_SIZE < 0
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 0
+# endif
+
 size_t	ft_strlen(char *str);
 char	*ft_substr(char *buffer, int start, int end);
 char	*ft_strdup(char *buffer);
